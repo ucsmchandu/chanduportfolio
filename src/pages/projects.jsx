@@ -75,7 +75,7 @@ Error Handling: Alerts for invalid usernames.
     {
       id: 4,
       img: train,
-      name: "Train Reservation System (using SQL) Terminal based",
+      name: "Train Reservation System",
       bg: "bg-[#A1EEBD]",
       details:
        `
@@ -92,7 +92,7 @@ Database Integration: Efficient data handling with SQL.
     {
       id: 5,
       img: bank,
-      name: "Bank Management System (using SQL) Terminal based",
+      name: "Bank Management System",
       bg: "bg-[#4CC9FE]",
       details:
        `
@@ -126,15 +126,14 @@ User-Friendly CLI: Simple menu-based interface for easy interaction.
           <li key={project.id}>
             <motion.div
               whileHover={{ scale: 1.1,duration:0 }}
-              
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1,y:-40}}
               transition={{ delay: 0.01,duration:0.4, ease: "easeInOut" }}
               viewport={{ margin: "-200px", once: false }}
-              className={`rounded-4xl ${project.bg} flex flex-col p-4 items-center space-y-6 relative lg:top-30`}
+              className={`rounded-4xl ${project.bg} flex flex-col p-2 items-center space-y-6 relative lg:top-30`}
             >
               <div>
-                <img src={project.img} className="h-40 w-40" />
+                <img src={project.img} className="h-35 w-35" />
               </div>
 
               <p className="text-center relative font-mono text-xl p-1">
