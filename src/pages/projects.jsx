@@ -77,6 +77,7 @@ Error Handling: Alerts for invalid usernames.
       img: train,
       name: "Train Reservation System (using SQL) Terminal based",
       bg: "bg-[#A1EEBD]",
+      gitHubLink:"https://github.com/ucsmchandu/Train-Reservation.git",
       details:
        `
       A terminal-based app to manage train ticket bookings, schedules, and cancellations.
@@ -94,6 +95,7 @@ Database Integration: Efficient data handling with SQL.
       img: bank,
       name: "Bank Management System (using SQL) Terminal based",
       bg: "bg-[#4CC9FE]",
+      gitHubLink:"https://github.com/ucsmchandu/Bank-Management.git",
       details:
        `
        A terminal-based application for simulating essential banking operations like account management, deposits, withdrawals, and fund transfers.

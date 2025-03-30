@@ -65,7 +65,7 @@ const Contact = () => {
         </div>
         <div className='flex justify-center p-4 relative -top-3 space-x-6'>
          <a href="mailto:uchandrasaimahesh@gmail.com"> <img src={mail} className='h-10' /></a>
-         <a href="https://www.linkedin.com/public-profile/settings?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_self_edit_contact-info%3BQKAlCF7PRQChHSVCN9q3uw%3D%3D" target="_blank" className='cursor-pointer'> <img src={linkedin} className='h-10'/></a>
+         <a href="https://www.linkedin.com/in/chandrasaimahesh-uppu-8aa3802b7" target="_blank" className='cursor-pointer'> <img src={linkedin} className='h-10'/></a>
           <a href="https://github.com/ucsmchandu" target="_blank" className='cursor-pointer'><img src={github} className='h-10' /></a>
         </div>
 
