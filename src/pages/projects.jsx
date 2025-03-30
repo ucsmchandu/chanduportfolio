@@ -75,7 +75,7 @@ Error Handling: Alerts for invalid usernames.
     {
       id: 4,
       img: train,
-      name: "Train Reservation System (using SQL) Terminal based",
+      name: "Train Reservation System",
       bg: "bg-[#A1EEBD]",
       gitHubLink:"https://github.com/ucsmchandu/Train-Reservation.git",
       details:
@@ -93,7 +93,7 @@ Database Integration: Efficient data handling with SQL.
     {
       id: 5,
       img: bank,
-      name: "Bank Management System (using SQL) Terminal based",
+      name: "Bank Management System",
       bg: "bg-[#4CC9FE]",
       gitHubLink:"https://github.com/ucsmchandu/Bank-Management.git",
       details:
@@ -123,20 +123,19 @@ User-Friendly CLI: Simple menu-based interface for easy interaction.
       <h1 className="text-5xl font-extrabold flex justify-center p-4 text-white">
         Projects
       </h1>
-      <div className="pt-15 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 justify-items-center gap-10 p-10 list-none">
+      <div className="pt-15 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 justify-items-center gap-10 p-10 list-none relative md:-top-10">
         {projects.map((project) => (
           <li key={project.id}>
             <motion.div
               whileHover={{ scale: 1.1,duration:0 }}
-              
               initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1,y:-40}}
+              whileInView={{ opacity: 1,y:-15}}
               transition={{ delay: 0.01,duration:0.4, ease: "easeInOut" }}
               viewport={{ margin: "-200px", once: false }}
-              className={`rounded-4xl ${project.bg} flex flex-col p-4 items-center space-y-6 relative lg:top-30`}
+              className={`rounded-4xl ${project.bg} flex flex-col p-2 items-center space-y-4 relative lg:top-15`}
             >
               <div>
-                <img src={project.img} className="h-40 w-40" />
+                <img src={project.img} className="h-35 w-35" />
               </div>
 
               <p className="text-center relative font-mono text-xl p-1">
