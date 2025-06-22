@@ -8,7 +8,7 @@ import bank from "../assets/bank.png";
 import gitLogo from "../assets/githublogo.png";
 import liveLink from "../assets/livelink.png";
 import more from "../assets/more.png";
-
+import ecommerce from "../assets/ecommerce.png"
 const Projects = () => {
   const projects = [
     {
