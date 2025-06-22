@@ -114,7 +114,7 @@ User-Friendly CLI: Simple menu-based interface for easy interaction.
       id: 6,
       img: ecommerce,
       name: "Ecommerce",
-      bg: "bg-[#433878]",
+      bg: "bg-[#D9EAFD]",
       gitHubLink:"https://github.com/ucsmchandu/ecommerce.git",
       live:"https://ecommerce-gj17.vercel.app/",
       details:
