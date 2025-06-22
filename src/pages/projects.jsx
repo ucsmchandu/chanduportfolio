@@ -110,6 +110,25 @@ Transaction Records: SQL database stores all transaction details and account his
 User-Friendly CLI: Simple menu-based interface for easy interaction.
       `
     },
+     {
+      id: 6,
+      img: ecommerce,
+      name: "Ecommerce",
+      bg: "bg-[#4CC9FE]",
+      gitHubLink:"https://github.com/ucsmchandu/ecommerce.git",
+      live:"https://ecommerce-gj17.vercel.app/",
+      details:
+       `
+       I developed a fully functional e-commerce web application using React, Tailwind CSS, and Firebase. The platform allows users to explore a wide range of products, add items to their cart, and securely register or log in to place orders.
+
+-Features:
+ User Authentication: Registration, login, and Google Sign-In using Firebase Auth with protected routes for cart and wishlist access.
+ Product Listing: Products fetched from an API and dynamically rendered with responsive UI
+ Cart Functionality: Add to cart, remove items, quantity adjustment, and real-time cart summary.
+ Product Details Page: Clickable products showing detailed information, images, price, and reviews.
+  Responsive Design: Optimized for both desktop and mobile using Tailwind CSS.
+      `
+    },
   ];
   const [selectedProject, setSelectedProject] = useState(null);
   const showProjectDetails = (id) => {
