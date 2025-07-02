@@ -116,7 +116,7 @@ User-Friendly CLI: Simple menu-based interface for easy interaction.
       name: "Ecommerce",
       bg: "bg-[#B0DB9C]",
       gitHubLink:"https://github.com/ucsmchandu/ecommerce.git",
-      live:"https://ecommerce-gj17.vercel.app/",
+      live:"https://ecommerce-azure-phi-46.vercel.app/",
       details:
        `
        I developed a fully functional e-commerce web application using React, Tailwind CSS, and Firebase. The platform allows users to explore a wide range of products, add items to their cart, and securely register or log in to place orders.
@@ -129,6 +129,20 @@ User-Friendly CLI: Simple menu-based interface for easy interaction.
   Responsive Design: Optimized for both desktop and mobile using Tailwind CSS.
       `
     },
+    {
+       id: 7,
+      img: "https://res.cloudinary.com/dllvcgpsk/image/upload/v1751353015/cq7hnfgu3impnf6z0s8m.png",
+      name: "Skilcenta",
+      bg: "bg-linear-to-br from-[#faf5ff] to-[#e9d5ff]",
+      gitHubLink:"https://github.com/ucsmchandu/ecommerce.git",
+      live:"https://skilcenta.vercel.app",
+      details:
+       `
+      💡 Skilcenta — Student Portal Website
+Skilcenta is a centralized platform built for B.Tech students to access academic resources, explore development roadmaps, use AI tools for learning, and securely buy/sell second-hand products within their college.
+Built with React, Firebase, and Tailwind CSS, Skilcenta focuses on community, convenience, and collaboration among students.
+      `
+    }
   ];
   const [selectedProject, setSelectedProject] = useState(null);
   const showProjectDetails = (id) => {
@@ -142,26 +156,24 @@ User-Friendly CLI: Simple menu-based interface for easy interaction.
       <h1 className="text-5xl font-extrabold flex justify-center p-4 text-white">
         Projects
       </h1>
-      <div className="pt-15 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 justify-items-center gap-10 p-10 list-none relative md:-top-10">
+      <div className="pt-15 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 justify-items-center gap-10 p-10 list-none relative md:-top-10">
         {projects.map((project) => (
           <li key={project.id}>
-            <motion.div
-              whileHover={{ scale: 1.1,duration:0 }}
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1,y:-15}}
-              transition={{ delay: 0.01,duration:0.4, ease: "easeInOut" }}
-              viewport={{ margin: "-200px", once: false }}
-              className={`rounded-4xl ${project.bg} flex flex-col p-2 items-center space-y-4 relative lg:top-15`}
-            >
-              <div>
-                <img src={project.img} className="h-35 w-35" />
-              </div>
-
-              <p className="text-center relative font-mono text-xl p-1">
-                {project.name}
-              </p>
-
-              <div className="space-x-8">
+           <motion.div
+  whileHover={{ scale: 1.1, duration: 0 }}
+  initial={{ opacity: 0 }}
+  whileInView={{ opacity: 1, y: -15 }}
+  transition={{ delay: 0.01, duration: 0.4, ease: "easeInOut" }}
+  viewport={{ margin: "-200px", once: false }}
+  className={`rounded-4xl ${project.bg} flex flex-col p-4 items-center space-y-4 relative lg:top-15 w-72 h-80 shadow-lg`} // <-- fixed width/height
+>
+  <div className="flex justify-center items-center w-full h-32">
+    <img src={project.img} className="object-contain h-28 w-28" />
+  </div>
+  <p className="text-center relative font-mono text-xl p-1">
+    {project.name}
+  </p>
+  <div className="space-x-8 mt-10">
 
                 <span title="github">
                   <button className="cursor-pointer">

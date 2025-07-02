@@ -16,6 +16,7 @@ const Skills = () => {
     { id: 5, img: REACT,name:"REACT",bg:"bg-[#F6F8D5]" ,duration:1},
     { id: 6, img: TAILWIND,name:"TAILWIND",bg:"bg-[#71BBB2]",duration:1.1},
     { id: 7, img: SQL,name:"SQL" ,bg:"bg-[#608BC1]",duration:1.2},
+    {id: 8, img: "https://res.cloudinary.com/dllvcgpsk/image/upload/v1751477289/database_rxuxth.png",name:"FIREBASE" ,bg:"bg-[#FFFCFB]",duration:1.2}
   ];
   return (
     <div id="skills" className=" bg-[#4CC9FE] min-h-screen relative ">
