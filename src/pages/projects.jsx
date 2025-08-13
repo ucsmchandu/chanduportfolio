@@ -134,7 +134,7 @@ User-Friendly CLI: Simple menu-based interface for easy interaction.
       img: "https://res.cloudinary.com/dllvcgpsk/image/upload/v1751353015/cq7hnfgu3impnf6z0s8m.png",
       name: "Skilcenta",
       bg: "bg-linear-to-br from-[#faf5ff] to-[#e9d5ff]",
-      gitHubLink:"https://github.com/ucsmchandu/ecommerce.git",
+      gitHubLink:"https://github.com/ucsmchandu",
       live:"https://skilcenta.vercel.app",
       details:
        `
