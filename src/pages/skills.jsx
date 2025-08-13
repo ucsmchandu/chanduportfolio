@@ -10,13 +10,16 @@ import TAILWIND from "../assets/tailwind.png";
 const Skills = () => {
   const skills = [
     { id: 1, img: CPP, name:"C++",bg:"bg-[#A594F9]",duration:1 },
-    { id: 2, img: HTML,name:"HTML",bg:"bg-[#FFCDB2]" ,duration:1.1},
-    { id: 3, img: CSS,name:"CSS",bg:"bg-[#E5D9F2]" ,duration:1.2},
-    { id: 4, img: JAVASCRIPT,name:"JAVASCRIPT" ,bg:"bg-[#698474]",duration:1.3},
-    { id: 5, img: REACT,name:"REACT",bg:"bg-[#F6F8D5]" ,duration:1},
-    { id: 6, img: TAILWIND,name:"TAILWIND",bg:"bg-[#71BBB2]",duration:1.1},
-    { id: 7, img: SQL,name:"SQL" ,bg:"bg-[#608BC1]",duration:1.2},
-    {id: 8, img: "https://res.cloudinary.com/dllvcgpsk/image/upload/v1751477289/database_rxuxth.png",name:"FIREBASE" ,bg:"bg-[#FFFCFB]",duration:1.2}
+     { id: 2, img: SQL,name:"SQL" ,bg:"bg-[#608BC1]",duration:1.2},
+    { id: 3, img: HTML,name:"HTML",bg:"bg-[#FFCDB2]" ,duration:1.1},
+    { id: 4, img: CSS,name:"CSS",bg:"bg-[#E5D9F2]" ,duration:1.2},
+    { id: 5, img: JAVASCRIPT,name:"JAVASCRIPT" ,bg:"bg-[#698474]",duration:1.3},
+    { id: 6, img: REACT,name:"REACT",bg:"bg-[#F6F8D5]" ,duration:1},
+    { id: 7, img: TAILWIND,name:"TAILWIND",bg:"bg-[#71BBB2]",duration:1.1},
+    {id: 8, img: "https://res.cloudinary.com/dllvcgpsk/image/upload/v1751477289/database_rxuxth.png",name:"FIREBASE" ,bg:"bg-[#FFFCFB]",duration:1.2},
+    {id:9,img:"https://res.cloudinary.com/dllvcgpsk/image/upload/v1755105859/node-js_wnkqsr.png",name:"NODE",bg:"bg-[#FAF9EE]",duration:1.1},
+    {id:10,img:"https://res.cloudinary.com/dllvcgpsk/image/upload/v1755105881/express_hajjpf.png",name:"EXPRESS",bg:"bg-[#578FCA]",duration:1},
+    {id:11,img:"https://res.cloudinary.com/dllvcgpsk/image/upload/v1755105870/mongo_jidfti.png",name:"MONGO DB",bg:"bg-white",duration:1.3}
   ];
   return (
     <div id="skills" className=" bg-[#4CC9FE] min-h-screen relative ">
