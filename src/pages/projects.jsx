@@ -134,13 +134,36 @@ User-Friendly CLI: Simple menu-based interface for easy interaction.
       img: "https://res.cloudinary.com/dllvcgpsk/image/upload/v1751353015/cq7hnfgu3impnf6z0s8m.png",
       name: "Skilcenta",
       bg: "bg-linear-to-br from-[#faf5ff] to-[#e9d5ff]",
-      gitHubLink:"https://github.com/ucsmchandu",
+      gitHubLink:"https://github.com/ucsmchandu/Skilcenta.git",
       live:"https://skilcenta.vercel.app",
       details:
        `
       💡 Skilcenta — Student Portal Website
 Skilcenta is a centralized platform built for B.Tech students to access academic resources, explore development roadmaps, use AI tools for learning, and securely buy/sell second-hand products within their college.
 Built with React, Firebase, and Tailwind CSS, Skilcenta focuses on community, convenience, and collaboration among students.
+      `
+    },
+    {
+       id: 8,
+      img: "https://res.cloudinary.com/dllvcgpsk/image/upload/v1771049020/wuvmiwr4tw2jygzbheqo.png",
+      name: "Taskopia",
+      bg: "bg-linear-to-br from-[#f9fafb] to-[#e5e7eb]",
+      gitHubLink:"https://github.com/ucsmchandu/taskopia.git",
+      live:"https://taskopia-one.vercel.app/",
+      details:
+       `
+    Taskopia is built to make short-term, real-world work easy to find and easy to fill.
+Many people need help for just a few hours or a single day — like moving items, helping in a shop, setting up an event, or doing basic on-site work. At the same time, there are people who are willing to work but don’t want full-time jobs or long-term commitments.
+Taskopia bridges this gap by creating a local marketplace where:
+Anyone can post temporary tasks based on their immediate needs
+Others nearby can discover these tasks and apply instantly
+The poster selects a suitable person
+The task gets completed within a short time frame
+The main idea is to provide:
+Flexible earning opportunities for people
+Quick workforce access for small or urgent needs
+No hiring process or job commitment, just task-based work on demand
+It’s focused on making everyday, temporary work more accessible, fast, and commitment-free for both sides.
       `
     }
   ];
