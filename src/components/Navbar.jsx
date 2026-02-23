@@ -98,7 +98,7 @@ const Navbar = () => {
                 </Link>
               </motion.button>
 
-              {/* <motion.button
+              <motion.button
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -107,9 +107,9 @@ const Navbar = () => {
                       present == "resume" ? " bg-[#E55B50]" : "bg-[#4CC9FE]"
                     }`}
                   >
-                   <a href="/portfolio-dox.txt" download="sample.txt" >📥 Download Resume</a>
+                   <a href="https://drive.google.com/file/d/1GgJQp9uGbOYXELhl8jQnIS5AHFiTfM0q/view?usp=sharing" target="_blank" rel="noreferrer" >📥 Download Resume</a>
                   </li>
-              </motion.button> */}
+              </motion.button>
 
               <motion.button
                 whileHover={{ scale: 1.1 }}
@@ -194,7 +194,7 @@ const Navbar = () => {
             </Link>
           </li>
          
-          {/* <li
+          <li
             onClick={() => {
               setPresent("resume");
             }}
@@ -203,11 +203,11 @@ const Navbar = () => {
               className={`block p-2 hover:bg-gray-700 rounded ${
                 present == "resume" ? "bg-gray-800" : ""
               }`}
-             href="/portfolio-dox.txt" download="sample.txt"
+             href="https://drive.google.com/file/d/1GgJQp9uGbOYXELhl8jQnIS5AHFiTfM0q/view?usp=sharing" target="_blank" rel="noreferrer"
             >
               📥 Download Resume
             </a>
-          </li> */}
+          </li>
           <li
             onClick={() => {
               setPresent("contact");
