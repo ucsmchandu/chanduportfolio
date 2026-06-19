@@ -1,233 +1,216 @@
-import React, { useState } from "react";
-import {motion} from "framer-motion";
-import { useEffect } from "react";
+import React, { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 import { HashLink as Link } from "react-router-hash-link";
 import menu from "../assets/menu.png";
 import close from "../assets/close.png";
 import logo from "../assets/logo2.png";
 
+const NAV_LINKS = [
+  { id: "home", label: "Home", href: "#home" },
+  { id: "skills", label: "Skills", href: "#skills" },
+  { id: "projects", label: "Projects", href: "#projects" },
+  { id: "contact", label: "Contact", href: "#contact" },
+];
+
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [present, setPresent] = useState("home");
-  const [hidden,setHidden]=useState(false);
-  useEffect(() => {
-    let previousScrollY = window.scrollY;
-    const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-      if (currentScrollY > previousScrollY && currentScrollY > 150) {
-        setHidden(true);
-      } else {
-        setHidden(false);
-      }
-      previousScrollY = currentScrollY;
-    };
+  const [hidden, setHidden] = useState(false);
 
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
+  useEffect(() => {
+    let prev = window.scrollY;
+    const handleScroll = () => {
+      const cur = window.scrollY;
+      setHidden(cur > prev && cur > 150);
+      prev = cur;
     };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
   return (
-    // for medium devices
     <>
       <motion.nav
-      variants={{
-        visible:{y:0},
-        hidden:{y:-100}
-      }}
-      animate={hidden ? "hidden" : "visible"}
-      transition={{duration: 0.5,ease:"easeInOut"}}
-      className=" p-6 bg-[#15b1f4] text-[#FFFFFF] shadow-lg fixed top-0 left-0 w-full z-50">
-        <div className="flex justify-between">
-          <div>
-            <h1 className="text-2xl font-extrabold">
-              <Link to="#home" smooth={true} duration={500}>
-                <img src={logo} alt="UCSM" className="h-9 w-36" />
-              </Link>
-            </h1>
-          </div>
-          {/* computer */}
-          <div className=" hidden sm:flex">
-            <ul className=" flex space-x-5 text-sm ">
-              <motion.button
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.95 }}
-                onClick={() => setPresent("home")}
-              >
-                <Link to="#home" smooth={true} duration={500} className="cursor-pointer">
-                  <li
-                    className={`rounded-lg cursor-pointer p-2 text-[#FFFFFF] hover:bg-[#2A8BB0] transition-all duration-400 ease-in-out ${
-                      present == "home" ? " bg-[#E55B50]" : "bg-[#4CC9FE]"
-                    }`}
-                  >
-                    Home
-                  </li>
-                </Link>
-              </motion.button>
+        variants={{
+          visible: { y: 0, opacity: 1 },
+          hidden: { y: -100, opacity: 0 },
+        }}
+        animate={hidden ? "hidden" : "visible"}
+        transition={{ duration: 0.4, ease: "easeInOut" }}
+        className="fixed top-0 left-0 w-full z-50 flex justify-center px-4 pt-3"
+        style={{ fontFamily: "'Poppins', sans-serif" }}
+      >
+        <div
+          className="w-full max-w-5xl h-16 flex items-center justify-between px-5 rounded-2xl"
+          style={{
+            background: "rgba(255,255,255,0.12)",
+            border: "1px solid rgba(255,255,255,0.32)",
+            boxShadow:
+              "0 8px 32px rgba(21,177,244,0.2), inset 0 1px 0 rgba(255,255,255,0.45), inset 0 -1px 0 rgba(255,255,255,0.08)",
+            backdropFilter: "blur(20px)",
+            WebkitBackdropFilter: "blur(20px)",
+          }}
+        >
+          <Link
+            to="#home"
+            smooth={true}
+            duration={500}
+            onClick={() => setPresent("home")}
+          >
+            <img src={logo} alt="UCSM" className="w-26 object-contain" />
+          </Link>
 
-              <motion.button
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.95 }}
-                onClick={() => setPresent("skills")}
-              >
-                <Link to="#skills" smooth={true} duration={500} className="cursor-pointer">
-                  <li
-                    className={`rounded-lg cursor-pointer p-2 text-[#FFFFFF] hover:bg-[#2A8BB0] transition-all duration-400 ease-in-out ${
-                      present == "skills" ? " bg-[#E55B50]" : "bg-[#4CC9FE]"
-                    }`}
-                  >
-                    Skills
-                  </li>
+          <ul className="hidden sm:flex items-center gap-1">
+            {NAV_LINKS.map(({ id, label, href }) => (
+              <li key={id}>
+                <Link
+                  to={href}
+                  smooth={true}
+                  duration={500}
+                  onClick={() => setPresent(id)}
+                  className="block px-3.5 py-1.5 rounded-xl text-[13px] font-medium transition-all duration-200"
+                  style={
+                    present === id
+                      ? {
+                          background: "rgba(21,177,244,0.75)",
+                          border: "1px solid rgba(21,177,244,0.45)",
+                          color: "#fff",
+                          boxShadow:
+                            "inset 0 1px 0 rgba(255,255,255,0.3), 0 2px 8px rgba(21,177,244,0.35)",
+                        }
+                      : {
+                          color: "rgba(255,255,255,0.9)",
+                          border: "1px solid transparent",
+                        }
+                  }
+                >
+                  {label}
                 </Link>
-              </motion.button>
-
-              <motion.button
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.95 }}
-                onClick={() => setPresent("projects")}
+              </li>
+            ))}
+            <li>
+              <a
+                href="https://drive.google.com/file/d/1GgJQp9uGbOYXELhl8jQnIS5AHFiTfM0q/view?usp=sharing"
+                target="_blank"
+                rel="noreferrer"
+                className="flex items-center gap-1.5 px-3.5 py-1.5 ml-1 rounded-xl text-[13px] font-medium text-white transition-all duration-200"
+                style={{
+                  background: "rgba(255,255,255,0.14)",
+                  border: "1px solid rgba(255,255,255,0.35)",
+                  boxShadow: "inset 0 1px 0 rgba(255,255,255,0.3)",
+                }}
               >
-                <Link to="#projects" smooth={true} duration={500} className="cursor-pointer">
-                  {" "}
-                  <li
-                    className={`rounded-lg cursor-pointer p-2 text-[#FFFFFF] hover:bg-[#2A8BB0] transition-all duration-400 ease-in-out ${
-                      present == "projects" ? " bg-[#E55B50]" : "bg-[#4CC9FE]"
-                    }`}
-                  >
-                    Projects
-                  </li>
-                </Link>
-              </motion.button>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-3.5 w-3.5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth={2}
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M12 4v12m-4-4l4 4 4-4"
+                  />
+                </svg>
+                Resume
+              </a>
+            </li>
+          </ul>
 
-              <motion.button
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                  <li
-                    className={`rounded-lg cursor-pointer p-2 text-[#FFFFFF] hover:bg-[#2A8BB0] transition-all duration-400 ease-in-out ${
-                      present == "resume" ? " bg-[#E55B50]" : "bg-[#4CC9FE]"
-                    }`}
-                  >
-                   <a href="https://drive.google.com/file/d/1GgJQp9uGbOYXELhl8jQnIS5AHFiTfM0q/view?usp=sharing" target="_blank" rel="noreferrer" >📥 Download Resume</a>
-                  </li>
-              </motion.button>
-
-              <motion.button
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.95 }}
-                onClick={() => setPresent("contact")}
-              >
-                <Link to="#contact" smooth={true} duration={500} className="cursor-pointer">
-                  {" "}
-                  <li
-                    className={`rounded-lg cursor-pointer p-2 text-[#FFFFFF] hover:bg-[#2A8BB0] transition-all duration-400 ease-in-out ${
-                      present == "contact" ? " bg-[#E55B50]" : "bg-[#4CC9FE]"
-                    }`}
-                  >
-                    Contact
-                  </li>
-                </Link>
-              </motion.button>
-            </ul>
-          </div>
           <button
-            className="flex sm:hidden border p-1 rounded-md cursor-pointer"
+            className="sm:hidden flex items-center justify-center w-9 h-9 rounded-xl"
+            style={{
+              background: "rgba(255,255,255,0.15)",
+              border: "1px solid rgba(255,255,255,0.35)",
+              boxShadow: "inset 0 1px 0 rgba(255,255,255,0.3)",
+            }}
             onClick={() => setIsOpen(!isOpen)}
           >
             {isOpen ? (
-              <img src={close} alt="Close" className="h-6" />
+              <img src={close} alt="Close" className="h-5" />
             ) : (
-              <img src={menu} alt="Menu" className="h-6" />
+              <img src={menu} alt="Menu" className="h-5" />
             )}
           </button>
         </div>
       </motion.nav>
-      {/* this is for mobile */}
-      <div
-        className={`flex sm:hidden fixed top-20 left-0 z-50 h-full rounded-r-lg w-64 bg-[#1A1A2E] text-white shadow-lg transform transition-transform duration-300 ease-in-out 
-        ${isOpen ? "translate-x-0" : "-translate-x-full"}`}
-      >
-        <ul className="p-6 space-y-4 w-full">
-          <li
-            onClick={() => {
-              setPresent("/");
-            }}
-          >
-            <Link
-              to="#home" smooth={true} duration={500}
-              className={`block p-2 hover:bg-gray-700 rounded ${
-                present == "/" ? "bg-gray-800" : ""
-              }`}
-              onClick={() => setIsOpen(false)}
-            >
-              Home
-            </Link>
-          </li>
 
+      <motion.div
+        initial={false}
+        animate={{ x: isOpen ? 0 : "-100%" }}
+        transition={{ duration: 0.28, ease: "easeInOut" }}
+        className="sm:hidden fixed top-[76px] left-3 z-50 w-60 rounded-2xl overflow-hidden"
+        style={{
+          background: "rgba(26,26,46,0.72)",
+          border: "1px solid rgba(255,255,255,0.18)",
+          boxShadow: "0 8px 32px rgba(0,0,0,0.3)",
+          backdropFilter: "blur(20px)",
+          WebkitBackdropFilter: "blur(20px)",
+          fontFamily: "'Poppins', sans-serif",
+        }}
+      >
+        <ul className="p-3 space-y-0.5">
+          {NAV_LINKS.map(({ id, label, href }) => (
+            <li key={id}>
+              <Link
+                to={href}
+                smooth={true}
+                duration={500}
+                onClick={() => {
+                  setPresent(id);
+                  setIsOpen(false);
+                }}
+                className="flex items-center px-3 py-2.5 rounded-xl text-[13px] font-medium transition-all duration-150 hover:bg-white/10"
+                style={
+                  present === id
+                    ? { color: "#fff", background: "rgba(255,255,255,0.1)" }
+                    : { color: "rgba(255,255,255,0.8)" }
+                }
+              >
+                {label}
+              </Link>
+            </li>
+          ))}
           <li
-            onClick={() => {
-              setPresent("skills");
-            }}
-          >
-            <Link
-              to="#skills"  smooth={true} duration={500}
-              className={`block p-2 hover:bg-gray-700 rounded ${
-                present == "skills" ? "bg-gray-800" : ""
-              }`}
-              onClick={() => setIsOpen(false)}
-            >
-              Skills
-            </Link>
-          </li>
-          <li
-            onClick={() => {
-              setPresent("projects");
-            }}
-          >
-            <Link
-              to="#projects"  smooth={true} duration={500}
-              className={`block p-2 hover:bg-gray-700 rounded ${
-                present == "projects" ? "bg-gray-800" : ""
-              }`}
-              onClick={() => setIsOpen(false)}
-            >
-              Projects
-            </Link>
-          </li>
-         
-          <li
-            onClick={() => {
-              setPresent("resume");
+            style={{
+              borderTop: "1px solid rgba(255,255,255,0.1)",
+              paddingTop: "6px",
+              marginTop: "6px",
             }}
           >
             <a
-              className={`block p-2 hover:bg-gray-700 rounded ${
-                present == "resume" ? "bg-gray-800" : ""
-              }`}
-             href="https://drive.google.com/file/d/1GgJQp9uGbOYXELhl8jQnIS5AHFiTfM0q/view?usp=sharing" target="_blank" rel="noreferrer"
+              href="https://drive.google.com/file/d/18-fDo0lNfjF7f6l0YLH4CFx8u9I-Z1wX/view?usp=sharing"
+              target="_blank"
+              rel="noreferrer"
+              onClick={() => setIsOpen(false)}
+              className="flex items-center gap-2.5 px-3 py-2.5 rounded-xl text-[13px] font-medium transition-all duration-150 hover:bg-white/10"
+              style={{ color: "rgba(255,255,255,0.8)" }}
             >
-              📥 Download Resume
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-4 w-4"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth={2}
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M12 4v12m-4-4l4 4 4-4"
+                />
+              </svg>
+              Resume
             </a>
           </li>
-          <li
-            onClick={() => {
-              setPresent("contact");
-            }}
-          >
-            <Link
-              to="#contact"  smooth={true} duration={500}
-              className={`block p-2 hover:bg-gray-700 rounded ${
-                present == "contact" ? "bg-gray-800" : ""
-              }`}
-              onClick={() => setIsOpen(false)}
-            >
-              Contact
-            </Link>
-          </li>
         </ul>
-      </div>
+      </motion.div>
+
       {isOpen && (
         <div
-          className="fixed inset-0  bg-opacity-50 z-40"
+          className="sm:hidden fixed inset-0 z-40"
           onClick={() => setIsOpen(false)}
         />
       )}
