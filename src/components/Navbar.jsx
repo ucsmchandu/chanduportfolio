@@ -90,7 +90,7 @@ const Navbar = () => {
             ))}
             <li>
               <a
-                href="https://drive.google.com/file/d/1GgJQp9uGbOYXELhl8jQnIS5AHFiTfM0q/view?usp=sharing"
+                href="https://drive.google.com/file/d/18-fDo0lNfjF7f6l0YLH4CFx8u9I-Z1wX/view?usp=sharing"
                 target="_blank"
                 rel="noreferrer"
                 className="flex items-center gap-1.5 px-3.5 py-1.5 ml-1 rounded-xl text-[13px] font-medium text-white transition-all duration-200"
