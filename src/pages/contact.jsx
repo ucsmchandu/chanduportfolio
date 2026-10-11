@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import linkedin from '../assets/linkedinlogo.png'
 import github from '../assets/githublogo.png'
 import mail from '../assets/mail.png'
+import leetcode from '../assets/leetcode.svg'
 const Contact = () => {
   const [name,setName]=useState('');
   const [email,setEmail]=useState('');
@@ -64,9 +65,10 @@ const Contact = () => {
           <h1>contact me</h1>
         </div>
         <div className='flex justify-center p-4 relative -top-3 space-x-6'>
-         <a href="mailto:uchandrasaimahesh@gmail.com"> <img src={mail} className='h-10' /></a>
-         <a href="https://www.linkedin.com/in/chandra-sai-mahesh/" target="_blank" className='cursor-pointer'> <img src={linkedin} className='h-10'/></a>
-          <a href="https://github.com/ucsmchandu" target="_blank" className='cursor-pointer'><img src={github} className='h-10' /></a>
+         <a href="mailto:uchandrasaimahesh@gmail.com"> <img src={mail} alt="Email" className='h-10' /></a>
+         <a href="https://www.linkedin.com/in/chandra-sai-mahesh/" target="_blank" rel="noreferrer" className='cursor-pointer'> <img src={linkedin} alt="LinkedIn" className='h-10'/></a>
+          <a href="https://github.com/ucsmchandu" target="_blank" rel="noreferrer" className='cursor-pointer'><img src={github} alt="GitHub" className='h-10' /></a>
+          <a href="https://leetcode.com/u/chandu_009/" target="_blank" rel="noreferrer" className='cursor-pointer'><img src={leetcode} alt="LeetCode" className='h-10' /></a>
         </div>
 
         <div className='flex justify-center'>
